@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content%}
+  <h1>Account</h1>
+  <div class="card">
+    <div class="card-header">
+        <!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+
+          <div class="btn-group mr-2" role="group" aria-label="First group
+          ">
+            <a class="btn btn-outline-info" href="#" role="button">Link</a>
+          </div>
+          <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <a class="btn btn-outline-info" href="#" role="button">Link</a>
+          </div>
+          <div class="btn-group" role="group" aria-label="Third group">
+            <a class="btn btn-outline-info" href="#" role="button">Link</a>
+          </div>
+        </div> -->
+    </div>
+    <div class="card-body">
+      <h3>User Credentials</h3>
+      <p><b>Username: </b> {{ session['username'] }}</p>
+      <p><b>E-Mail: </b>{{ session['email'] }} <a href="{{ request.path }}/change_email" class="badge badge-primary">Change</a></p>
+      <p><b>Password: </b>•••••••• <a href="{{ request.path }}/change_password" class="badge badge-primary">Change</a></p>
+      <hr>
+      <h3>User Permissions</h3>
+      <p><b>Developer:</b> {{ session['permission']['dev'] }}</p>
+      <p><b>Admin:</b> {{ session['permission']['admin'] }}</p>
+      <p><b>Manager:</b> {{ session['permission']['manager'] }}</p>
+      <p><b>Tenant:</b> {{ session['permission']['tenant'] }}</p>
+      <p><b>Member:</b> {{ session['permission']['member'] }}</p>
+    </div>
+
+
+</div>
+{% endblock %}

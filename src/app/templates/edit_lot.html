@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content%}
+  <form class="form-signin" action="" method="POST">
+
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Manage Parking Informations</h1>
+      <p>Change Parking Lot Informations</p>
+    </div>
+
+    <div class="col col-sm-4">
+      <div class="card" style="width: 18rem;">
+      <img src="" class="" alt="">
+        <div class="card-body">
+          <div class="form-group">
+            <small>Lot Alias</small>
+            <input type="text" class="form-control" name="lotalias" id="lotalias" placeholder= {{plheader[0]}} autofocus required>
+          </div>
+          <div class="form-group">
+            <small>Lot Name</small>
+            <input type="text" class="form-control" name="lotname" id="lotname" placeholder={{plheader[2]}} required>
+          </div>
+          <p class="card-text">
+          <h5 class="display-6"></h5>
+          <hr class="my-4">
+          <div class="row">
+            <div class="col col-sm">
+
+              <div class="form-group">
+                <small>Price Multiplier (e.g. 1.2)</small>
+                <input type="text" class="form-control" name="pricemult" id="pricemult" placeholder={{plheader[3]}} required>
+              </div>
+
+
+            <div class="form-group">
+              <small>Street 1</small>
+              <input type="text" class="form-control" name="street1" id="street1" placeholder={{plheader[4]}} required>
+            </div>
+
+            <div class="form-group">
+              <small>Street 2</small>
+              <input type="text" class="form-control" name="street2" id="street2" placeholder={{plheader[5]}}>
+            </div>
+
+            <div class="form-group">
+              <small>City</small>
+              <input type="text" class="form-control" name="city" id="city" placeholder={{plheader[6]}}>
+            </div>
+
+            <div class="form-group">
+              <small>Region</small>
+              <input type="text" class="form-control" name="region" id="region" placeholder={{plheader[7]}}>
+            </div>
+
+            <div class="form-group">
+              <small>Postal Code</small>
+              <input type="text" class="form-control" name="postalcode" id="postalcode" placeholder={{plheader[8]}}>
+            </div>
+
+            </div>
+          </div>
+
+    <button type="submit" class="btn btn-success btn-block">Submit</button>
+
+  </form>
+{% endblock %}

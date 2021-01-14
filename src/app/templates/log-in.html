@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content%}
+  <form class="form-signin" action="" method="POST">
+    
+    <div class="text-center mb-4">
+      <img class="mb-4" src="{{ url_for('static', filename='img/database.png') }}" alt="" width="96" height="96">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <p>Login using your e-mail and password.</p>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" required autofocus>
+    </div>
+    
+    <div>
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+    </div>
+    <p></p>
+    <button type="submit" class="btn btn-success btn-block">Log In</button>
+  
+  </form>
+{% endblock %}

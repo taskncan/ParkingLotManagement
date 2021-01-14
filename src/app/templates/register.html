@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content%}
+  <form class="form-signin" action="" method="POST">
+    
+    <div class="text-center mb-4">
+      <img class="mb-4" src="{{ url_for('static', filename='img/database.png') }}" alt="" width="96" height="96">
+      <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+      <p>Register now to not miss membership benefits.</p>
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="username" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Enter your username" required autofocus>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter your e-mail address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="Enter a password" required>
+    </div>
+
+    <p><button type="submit" class="btn btn-primary btn-block" value="register">Register</button></p>
+  </form>
+{% endblock %}

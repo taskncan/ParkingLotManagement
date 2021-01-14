@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content%}
+ <body>
+  <h1>Parking Lots</h1>
+  <div class="row">
+    <div class="col"></div>
+    {% if session %}
+      {% if session['permission']['dev'] or session['permission']['admin'] %}
+        <a class="btn btn-primary" href="/manage">Manage</a>
+      {% endif %}
+    {% endif %}
+  </div>
+  <div class="row">
+
+  {%for parkinglot in parkinglots %}
+  <div class="col col-sm-4">
+    <div class="card" style="width: 18rem;">
+    <img src="" class="" alt="">
+      <div class="card-body">
+        <h5 class="card-title">{{parkinglot[0]}}</h5>
+        <p class="card-text">
+        <hr class="my-4">
+        <div class="row">
+        <div class="col col-sm">
+        <p><a href="https://www.openstreetmap.org/#map=17/40.89041/29.37909"><i class="icon ion-ios-pin"></i></a> {{ info[4] }}</p>
+        <p> {{ info[5] }}</p>
+        <p> {{ info[6] }}/{{ info[7] }}</p>
+        <p> {{ info[8] }}</p>
+        </div>
+        </div>
+          {% if session %}
+        {% if session['permission']['dev'] or session['permission']['admin'] %}
+        <p>
+        <a href="{{ request.path }}/{{ parkinglot[0] }}/edit" class="btn btn-primary"> Edit</a>
+
+        {% endif %}
+      {% endif %}
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+  </div>
+  </body>
+{% endblock %}

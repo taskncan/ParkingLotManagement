@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content%}
+  <form class="form-signin" action="" method="POST">
+
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Manage Parking Lots</h1>
+      <p>Add a new parking lot</p>
+    </div>
+
+    <div class="form-group">
+      <label for="lotalias">Lot Alias</label>
+      <input type="text" class="form-control" name="lotalias" id="lotalias" aria-describedby="emailHelp" placeholder="Enter an alias for the parking lot" required autofocus>
+    </div>
+    <div class="form-group">
+      <label for="firmalias">Select a Firm Alias</label>
+      <select class="form-control" id="firmalias" name='firmalias'>
+        {% for firm in firms %}
+          <option>{{ firm[0] }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label for="lotname">Lot Name</label>
+      <input type="text" class="form-control" name="lotname" id="lotname" placeholder="Lot Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="number">Price Multiplier</label>
+      <input type="text" class="form-control" name="pricemult" id="pricemult" aria-describedby="pricemultHelp" placeholder="Enter Price Multiplier (e.g. 1.2)" required>
+    </div>
+
+    <div class="form-group">
+      <label for="street1">Street 1</label>
+      <input type="text" class="form-control" name="street1" id="street1" aria-describedby="street1Help" placeholder="Enter an address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="street2">Street 2</label>
+      <input type="text" class="form-control" name="street2" id="street2" aria-describedby="street2Help" placeholder="Enter additional address details" required>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" name="city" id="city" aria-describedby="cityHelp" placeholder="Enter city" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Region</label>
+      <input type="text" class="form-control" name="region" id="region" aria-describedby="regionHelp" placeholder="Enter region">
+    </div>
+
+    <div class="form-group">
+      <label for="postal">Postal Code</label>
+      <input type="text" class="form-control" name="postal" id="postal" aria-describedby="emailHelp" placeholder="Postal Code">
+    </div>
+    <p></p>
+    <button type="submit" class="btn btn-success btn-block">Submit</button>
+
+  </form>
+{% endblock %}

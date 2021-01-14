@@ -1,0 +1,40 @@
+<div class="container">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul>
+        {% for category, message in messages %}
+
+          {% if category in ('success') %}
+            <div class="alert alert-success" role="alert">
+
+          {% elif category in ('error') %}
+            <div class="alert alert-danger" role="alert">
+
+          {% elif category in ('warning') %}
+            <div class="alert alert-warning" role="alert">
+
+          {% elif category in ('info') %}
+            <div class="alert alert-info" role="alert">
+
+          {% elif category in ('primary') %}
+            <div class="alert alert-primary" role="alert">
+
+          {% elif category in ('secondary') %}
+            <div class="alert alert-secondary" role="alert">
+
+          {% elif category in ('light') %}
+            <div class="alert alert-light" role="alert">
+
+          {% elif category in ('dark') %}
+            <div class="alert alert-dark" role="alert">
+          {% endif %}
+            {{ message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+</div>
