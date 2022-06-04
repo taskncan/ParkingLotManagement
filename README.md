@@ -1,7 +1,5 @@
 # Parking Lot Management System
 
-This system was designed and built for a course project for course named CS306 Database Management Systems.
-
 ## Install
 See [docs/install.md](docs/install.md) for details.
 
